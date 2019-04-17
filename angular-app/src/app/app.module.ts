@@ -11,7 +11,8 @@ import { RecipeListComponent } from "./components/recipe-list/recipe-list.compon
 import { RecipeItemComponent } from "./components/recipe-item/recipe-item.component";
 import { RecipeDetailComponent } from "./components/recipe-detail/recipe-detail.component";
 import { HeaderComponent } from "./layout/header.component";
-import { RecipesComponent } from './components/recipes/recipes.component';
+import { RecipesComponent } from "./components/recipes/recipes.component";
+import { BasicHighlightDirective } from "./directives/basic-highlight.directive";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RecipesComponent } from './components/recipes/recipes.component';
     RecipeItemComponent,
     RecipeDetailComponent,
     HeaderComponent,
-    RecipesComponent
+    RecipesComponent,
+    BasicHighlightDirective
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
