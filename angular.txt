@@ -103,6 +103,18 @@ Angular Fundamentals
             - Host Listener
                 - import
                 - @HostListener('event') method(eventData: Event) { //code }
+            - Host Binding
+                - @HostBinding('style.property') property: string;
+                - this.property = value;
+                - Can add @Input name: string = initialValue
+                - On component template [name]="value"
+                - this.property = name
+            - Creating a structural directive
+                - @Directive({ selector: value})
+                - export class StructuralDirective{ }
+                - @Input() set value(condition: boolean) { this.vcRef.createEmbeddedView(this.templateRef);}
+                - constructor(private templateRef: TemplateRef, private vcRef: ViewContainerRef) {}
+                - *selector
     5. Services & Dependency Injection
     6. Routing
     7. Observables
