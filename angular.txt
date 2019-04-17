@@ -88,6 +88,10 @@ Angular Fundamentals
                     - *ngFor="let something of array"
                     - *ngFor="let something of array; let i = index"
                 - <ng-content></ng-content>
+                - ngSwitch
+                    - [ngSwitch]="valueToCheck"
+                    - <p *ngSwitchCase="possibleValue">This possibleValue</p>
+                    - <p *ngSwitchDefault>Default Value</p>
             - Attribute
                 - [(ngModel)]="stateValue"
                 - ngStyle, dynamically apply styles
