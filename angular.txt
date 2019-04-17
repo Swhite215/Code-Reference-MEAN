@@ -17,6 +17,7 @@ Angular Fundamentals
             - template = html file or direct html
             - styleUrls = array of stylesheets
             - styles - array of style strings
+            - encapsulation: ViewEncapsulation.Native or .None or .Emulated (default)
         b. Databinding
             - Communication between TypeScript code and Template
             - String Interpolation
@@ -30,6 +31,46 @@ Angular Fundamentals
                     - (<HTMLInputElement>event.target).value
             - Two Way Binding
                 - [(ngMode)]="data"
+            - Custom Properties
+                - *ngFor="let data of array"
+                - Loop Level, [property]="data"
+                - Receiving Component
+                    - import { Input} from "@angular/core
+                    - @Input() property: type;
+                - Alias
+                    - [alias]="data"
+                    - @Input('alias')
+            - Reference
+                - #name
+                - (event)="method(name)"
+                - in component
+                    - import { ViewChild, ElementRef} from "@angular/core
+                    - @ViewChild('reference', component) name: ElementRef 
+                    - name.nativeElement = element w/ .value
+        c. Communicating Upward
+            - Parent Component Template
+                - (emittedEvent)="parentMethod($event)"
+            - Child Component
+                - import { Output, EventEmitter } from "@angular/core"
+                - @Output() emittedEvent = new EventEmitter<{}>()
+                - childMethod() {this.emittedEvent.emit({})}
+            - Alias
+                - Parent (alias)="parentMethod($event)
+                - Child @Output('alias')
+        d.  Ng Content
+            - Everything in between <component>LOST CONTENT</component>
+        e. Component Lifecycle
+            - Set-Up
+                - export class name implements lifecycle method - ng
+            - Order
+                - ngOnChanges, called after a bound input property changes
+                - ngOnInit, called after initialization
+                - ngDoCheck, called every change detection run
+                - ngAfterContentInit, called after content (ng-content) has been projected into view
+                - ngAfterContentChecked, called every time the projected content has been checked
+                - ngAfterViewInit, called after the component's view (and child views) has been initialized
+                - ngAfterViewChecked, called every time the view (and child views) have been checked
+                - ngOnDestroy, called once the component is about to be destroyed
     4. Directives
         a. What is a directive?
             - Directives are instructions in the DOM
@@ -43,6 +84,7 @@ Angular Fundamentals
                 -ngFor, dynamically render multiple components
                     - *ngFor="let something of array"
                     - *ngFor="let something of array; let i = index"
+                - <ng-content></ng-content>
             - Attribute
                 - [(ngModel)]="stateValue"
                 - ngStyle, dynamically apply styles
