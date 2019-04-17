@@ -47,6 +47,8 @@ Angular Fundamentals
                     - import { ViewChild, ElementRef} from "@angular/core
                     - @ViewChild('reference', component) name: ElementRef 
                     - name.nativeElement = element w/ .value
+            - @ContentChild
+                - @ContentChild('reference) name: ElementRef
         c. Communicating Upward
             - Parent Component Template
                 - (emittedEvent)="parentMethod($event)"
