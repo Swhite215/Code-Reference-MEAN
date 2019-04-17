@@ -97,7 +97,7 @@ Angular Fundamentals
                 - ngStyle, dynamically apply styles
                     - [ngStyle]="{styleName: 'value' | method() | condition}"
                 - ngClass, dynamically apply classes
-                    - [ngClass]="{className: boolean expression}"
+                    - [ngClass]="{className: boolean expression}", or function that returns object
             - Creating a basic attribute directive
                 - @Directive({ selector: value})
                 - export class NameOfDirective implements OnInit{ }
@@ -120,6 +120,30 @@ Angular Fundamentals
                 - constructor(private templateRef: TemplateRef, private vcRef: ViewContainerRef) {}
                 - *selector
     5. Services & Dependency Injection
+        a. Why would you need services?
+            - Communication between components
+            - Requests to APIs
+            - Store and manage data
+        b. Setup
+            - export class SomethingService { method()}
+            - Component
+                - import { SomethingService } from "services/something.service"
+                - constructor(private somethingService: SomethingService){}
+                - @Component({ providers: [SomethingService]})
+                - this.somethingService.method()
+        c. Hierarchial Injector
+            - AppModule, Service is available application wide
+                - Option #1: @NgModule){ providers: [SomethingService]}
+                - Option #2: @Injectable({ providedIn: 'root}) within SomethingService
+            - AppComponent, Service is passed down to all child components of a component
+            - Component w/ no children, Service is just avaiable for this component
+            - @Injectable service where you are injecting another service
+        d. Cross Component Communication
+            - method = new EventEmitter<type>()
+            - In Component with SomethingService
+                - this.somethingService.method.emit()
+            - In Component with SomethingService where you want to listen
+                - this.somethingService.method.subscribe(callback)
     6. Routing
     7. Observables
     8. Forms
