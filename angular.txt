@@ -1,0 +1,28 @@
+Angular Fundamentals
+    1. What is Angular?
+        a. Framework
+            - Allows for the creation of reactive Single-Page-Applications (SPA)
+        b. Versions Angular 1  - Angular 2 - Angular 7
+            - Angular 1 is old, Angular 2 is a rewrite, Angular 7 is robust tool set
+    2. Angular CLI
+        a. Overview
+            - CLI for building projects
+        b. Commands
+            - ng new name
+            - ng serve
+    3. Components & Data Bindings
+    4. Directives
+        a. ngModel
+            - [(ngModel)]="stateValue"
+    5. Services & Dependency Injection
+    6. Routing
+    7. Observables
+    8. Forms
+    9. Pipes
+    10. HTTP
+    11. Authentication
+    12. Optimizations & NgModules
+    13. Deployment
+    14. Animations and Testing
+    15. Typescript
+        
