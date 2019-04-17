@@ -1,5 +1,6 @@
 //Blueprint for Recipe
 export class Recipe {
+  //No Shorthand
   public name: string;
   public description: string;
   public imagePath: string;
