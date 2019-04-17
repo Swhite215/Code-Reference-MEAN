@@ -30,17 +30,23 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Passing Props - Parent - Template](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-list/recipe-list.component.html)
 
-###### &nbsp;&nbsp;&nbsp;&nbsp; [Passing Props - Child - Template](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-item/recipe-item.component.html)
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Receiving Props - Child - Template](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-item/recipe-item.component.html)
 
-###### &nbsp;&nbsp;&nbsp;&nbsp; [Passing Props - Child - Component](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-item/recipe-item.component.ts)
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Reciving Props - Child - Component](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-item/recipe-item.component.ts)
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Emitting Event - Child](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/layout/header.component.ts)
 
-###### &nbsp;&nbsp;&nbsp;&nbsp; [Emitting Event - Parent](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/app.component.html)
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Catching Event - Parent](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/app.component.html)
 
 ##### - Directives
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [\*ngFor](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-list/recipe-list.component.html)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [\*ngIf](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipes/recipes.component.html)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Create Your Own - Basic Attribute](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/directives/basic-highlight.directive.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Create Your Own - Better Attribute](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/directives/better-highlight.directive.ts)
 
 ##### - Models
 
