@@ -31,8 +31,24 @@ Angular Fundamentals
             - Two Way Binding
                 - [(ngMode)]="data"
     4. Directives
-        a. ngModel
-            - [(ngModel)]="stateValue"
+        a. What is a directive?
+            - Directives are instructions in the DOM
+        b. Types
+            - Components
+                - <app-name></app-name>
+            - Structural
+                -ngIf, dynamically render content
+                    - *ngIf="boolean expression"
+                    - *ngIf="boolean expression; else name" with <ng-template #name><p>CONTENT</p></ng-template>
+                -ngFor, dynamically render multiple components
+                    - *ngFor="let something of array"
+                    - *ngFor="let something of array; let i = index"
+            - Attribute
+                - [(ngModel)]="stateValue"
+                - ngStyle, dynamically apply styles
+                    - [ngStyle]="{styleName: 'value' | method() | condition}"
+                - ngClass, dynamically apply classes
+                    - [ngClass]="{className: boolean expression}"
     5. Services & Dependency Injection
     6. Routing
     7. Observables
