@@ -1,4 +1,4 @@
-# Code-Reference-MERN
+# Code-Reference-MEAN
 
 Client-Side: Angular and Typescript
 
