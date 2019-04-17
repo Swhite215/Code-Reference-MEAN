@@ -93,6 +93,12 @@ Angular Fundamentals
                     - [ngStyle]="{styleName: 'value' | method() | condition}"
                 - ngClass, dynamically apply classes
                     - [ngClass]="{className: boolean expression}"
+            - Creating a basic attribute directive
+                - @Directive({ selector: value})
+                - export class NameOfDirective implements OnInit{ }
+                - constructor(private elementRef: ElementRef) {}
+                - ngOnInit() {this.elementRef.nativeElement.style.styleName = value}
+                - add NameOfDirective to module declarations
     5. Services & Dependency Injection
     6. Routing
     7. Observables
