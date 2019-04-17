@@ -10,7 +10,26 @@ Angular Fundamentals
         b. Commands
             - ng new name
             - ng serve
+            - ng generate c components/name
     3. Components & Data Bindings
+        a. @Component
+            - selector = html binding name, app-name, .class, #id, [attribute]
+            - template = html file or direct html
+            - styleUrls = array of stylesheets
+            - styles - array of style strings
+        b. Databinding
+            - Communication between TypeScript code and Template
+            - String Interpolation
+                - {{ data }}
+            - Property Binding
+                - [property]="data"
+            - Event Binding
+                - (event)="method"
+                - (event)="method($event = data)"
+                - in component method
+                    - (<HTMLInputElement>event.target).value
+            - Two Way Binding
+                - [(ngMode)]="data"
     4. Directives
         a. ngModel
             - [(ngModel)]="stateValue"
