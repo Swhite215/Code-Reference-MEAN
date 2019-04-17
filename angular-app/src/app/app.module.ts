@@ -13,6 +13,9 @@ import { RecipeDetailComponent } from "./components/recipe-detail/recipe-detail.
 import { HeaderComponent } from "./layout/header.component";
 import { RecipesComponent } from "./components/recipes/recipes.component";
 import { BasicHighlightDirective } from "./directives/basic-highlight.directive";
+import { BetterHighlightDirective } from "./directives/better-highlight.directive";
+import { UnlessDirective } from "./directives/unless.directive";
+import { DropDownDirective } from "./directives/dropdown.directive";
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { BasicHighlightDirective } from "./directives/basic-highlight.directive"
     RecipeDetailComponent,
     HeaderComponent,
     RecipesComponent,
-    BasicHighlightDirective
+    BasicHighlightDirective,
+    BetterHighlightDirective,
+    UnlessDirective,
+    DropDownDirective
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
