@@ -11,6 +11,7 @@ Angular Fundamentals
             - ng new name
             - ng serve
             - ng generate c components/name
+            - ng generate d directives/name
     3. Components & Data Bindings
         a. @Component
             - selector = html binding name, app-name, .class, #id, [attribute]
@@ -99,6 +100,9 @@ Angular Fundamentals
                 - constructor(private elementRef: ElementRef) {}
                 - ngOnInit() {this.elementRef.nativeElement.style.styleName = value}
                 - add NameOfDirective to module declarations
+            - Host Listener
+                - import
+                - @HostListener('event') method(eventData: Event) { //code }
     5. Services & Dependency Injection
     6. Routing
     7. Observables
