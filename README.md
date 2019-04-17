@@ -48,6 +48,8 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Create Your Own - Better Attribute](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/directives/better-highlight.directive.ts)
 
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Create Your Own - Structural](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/directives/unless.directive.ts)
+
 ##### - Models
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Multiple Models](https://github.com/Swhite215/Code-Reference-MEAN/tree/master/angular-app/src/app/models)
