@@ -12,6 +12,7 @@ Angular Fundamentals
             - ng serve
             - ng generate c components/name
             - ng generate d directives/name
+            - ng generate s services/name
     3. Components & Data Bindings
         a. @Component
             - selector = html binding name, app-name, .class, #id, [attribute]
