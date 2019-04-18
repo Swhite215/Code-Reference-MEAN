@@ -18,6 +18,7 @@ import { UnlessDirective } from "./directives/unless.directive";
 import { DropDownDirective } from "./directives/dropdown.directive";
 import { ShoppingService } from "./services/shopping.service";
 import { RecipeStartComponent } from './components/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './components/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RecipeStartComponent } from './components/recipe-start/recipe-start.com
     BetterHighlightDirective,
     UnlessDirective,
     DropDownDirective,
-    RecipeStartComponent
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [ShoppingService],
