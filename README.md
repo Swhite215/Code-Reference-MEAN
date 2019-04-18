@@ -54,6 +54,16 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Multiple Models](https://github.com/Swhite215/Code-Reference-MEAN/tree/master/angular-app/src/app/models)
 
+##### - Services
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Multiple Services](https://github.com/Swhite215/Code-Reference-MEAN/tree/master/angular-app/src/app/services)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Cross Component Communication - Service Declaration](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/services/recipe.service.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Cross Component Communication - Component Emitter](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-item/recipe-item.component.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Cross Component Communication - Component Receiver](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipes/recipes.component.ts)
+
 ### Nodejs
 
 ##### - Overview
