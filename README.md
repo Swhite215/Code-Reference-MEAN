@@ -64,6 +64,22 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Cross Component Communication - Component Receiver](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipes/recipes.component.ts)
 
+##### - Routing
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [App Router Module](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/app-routing.module.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Router Outlet](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/app.component.html)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Child Router Outlet](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipes/recipes.component.html)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Router Link](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/layout/header.component.html)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Router Link Active](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/layout/header.component.html)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Router Link Relative Path](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-item/recipe-item.component.html)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Router Params Subscribe](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-detail/recipe-detail.component.ts)
+
 ### Nodejs
 
 ##### - Overview
