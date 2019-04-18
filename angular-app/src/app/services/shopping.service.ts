@@ -17,4 +17,9 @@ export class ShoppingService {
     this.ingredients = [...this.ingredients, ingredient];
     this.ingredientsChanged.emit([...this.ingredients]);
   }
+
+  addToShoppingList(ingredients: Ingredient[]) {
+    this.ingredients = [...this.ingredients, ...ingredients];
+    this.ingredientsChanged.emit([...this.ingredients]);
+  }
 }
