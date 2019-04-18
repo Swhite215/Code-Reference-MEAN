@@ -146,6 +146,164 @@ Angular Fundamentals
             - In Component with SomethingService where you want to listen
                 - this.somethingService.method.subscribe(callback)
     6. Routing
+        a. Why do we need a router?
+            - To maintain a SPA over multiple pages of different content
+        b. Setting up the router
+            - import { Routes, RouterModule } from "@angular/core;
+            - const appRoutes: Routes = [{path: 'path', component: SomeViewComponent}, {path: '', component: HomeViewComponent} ]
+            - @NgModule( imports: [RouterModule.forRoot(appRoutes)])
+            - <router-outlet></router-outlet> directive, where you want your content to render
+            - <a routerLink="path">Path Name</a>
+        c. Navigation Paths
+            - "/absolute", "relative", "../path"
+        d. Styling Active Router Links
+            - <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Path</a>
+        e. Navigating Programmatically
+            - Absolute Paths
+                - import { Router} from "@angular/router
+                - constructor(private router: Router) {}
+                - method() { this.router.navigate(["/absolute"])}
+            - Relative Paths
+                - import { Router, ActivatedRoute} from "@angular/router
+                - constructor(private router: Router, private route: ActivatedRoute) {}
+                - method() { this.router.navigate(["relative"], { relativeTo: this.route })}
+        f. Passing Parameters to Routes
+            - const appRoutes: Routes = [{path: 'path/:dynamicVariable', component: SomeViewComponent} ]
+        g. Fetching Route Parameters
+            - dynamicVariable: {id: number, name: string};
+            - import { ActivatedRoute, Params} from "@angular/router
+            - constructor(private route: ActivatedRoute) {}
+            - ngOnInit() {this.dynamicVariable = { id: this.route.snapshot.params["id"], name: this.route.snapshot.params["name"] }}
+        h. Fetching Data Reactively
+            - Link on component that is already rendered doesn't re-instantiate the component
+            - this.route.params.subscribe(params: Params => {
+                this.user.id = params['id'];
+                this.user.name = params['name'];
+            })
+        i. Query Parameters and Fragments
+            - <a routerLinkActive="active" [queryParams]="{param: value}" [fragment]="value" [routerLinkActiveOptions]="{exact: true}">Path</a>
+            - method() { this.router.navigate(["relative"], { queryParams: {param: value}, "fragment": "value" })}
+            - ngOnInit() {this.dynamicVariable = { queryParams: this.route.snapshot.queryParams, fragment: this.route.snapshot.fragment }}
+            - this.route.queryParams.subscribe(callback)
+            - this.route.fragment.subscribe(callback)
+            - Preserving Query Parameters
+                - method() { this.router.navigate(["relative"], { relativeTo: this.route, queryParamsHandling: "merge" | "preserve" })}
+        j. Nested Routing
+            - const appRoutes: Routes = [{path: 'path', component: SomeViewComponent, children: [{path: ":value", components: SomeViewComponent}]} ]
+            - Parent component HTML, <router-outlet></router-outlet>
+        k. Redirecting and Wild Card Routes
+            - const appRoutes: Routes = [{path: '/404', component: PageNotFoundComponent}, {path: '**', redirectTo: "/404"} ]
+        l. app-routing.module.ts
+            - import { Routes, RouterModule} from "@angular/router"
+            - import { NgModule} from "@angular/core
+            - const appRoutes:Routes = [{path: "path", component: SomeViewComponent}]
+            - @NgModule({imports: [RouterModule.forRoot(appRoutes)], exports: [RouterModule]})
+            - export class AppRoutingModule {}
+            - in AppModule
+                - import { AppRoutingModule} from "app-routing.module.ts"
+                - NgModule({imports: [AppRoutingModule]})
+        m. Guards and canActivate
+            - auth-guard.service.ts
+                - import { CanActivate ActivatedRouterSnapShot, RouterStateSnapshot, Router} from "@angular/router"
+                - import { Observable} from "rxjs";
+                - import { Injectable} from "@angular/core;
+                - import { AuthService} from "auth.service.ts";
+                - @Injectable()
+                - export class AuthGuard implements CanActivate {
+                    - constructor(private authService: AuthService, private router: Router)
+                    -canActivate(route: ActivatedRouterSnapShot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+                        return this.authService.isAuthenticated().then((authenticated: boolean) => {
+                            if (authenticated) {
+                                return true;
+                            } else {
+                                this.router.navigate(["/]);
+                            }
+                        })
+                    }
+                    - canActivateChild() {}, same as above
+                }
+            - auth.service.ts
+                - export class AuthService {
+                    loggedIn = false;
+
+                    isAuthenticated() {
+                        const promise = new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                resolve(this.loggedIn);
+                            }, 1000)
+                        });
+                        return promise;
+                    }
+                    login() {
+                        this.loggedIn = true;
+                    }
+                    logout() {
+                        this.loggedIn = false;
+                    }
+                }
+            - app-routing.module.ts
+                - {path: "path", canActivate[AuthGuard], component: SomeViewComponent}
+                - {path: "path", canActivateChild[AuthGuard], component: SomeViewComponent}
+            - AppModule
+                - @NgModule({providers: [AuthGuard, AuthService]})
+        n. canDeactivate
+            - can-deativate-guard.service.ts
+                - import { Observable} from "rxjs";
+                - import { CanDeactivate, ActivatedRouterSnapShot, RouterStateSnapShot} from "@angular/router"
+                - export interface CanComponentDeactivate {
+                    canDeactivate: () => Observable<boolean> | Promise<boolean> | boolean
+                }
+                - export class CanDeactivateGuard implements CanDeactivate<CanComponentDeactivate> {
+                    canDeactivate(component: CanComponentDeactivate, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapShot, nextState?: RouterStateSnapShot) {
+                        return component.canDeactivate();
+                    }
+                }
+            - app-routing.module.ts
+                - {path: "path", component: SomeViewComponent, canDeactivate: [CanDeactivateGuard]}
+            - @NgModule({
+                providers: [CanDeactivateGuard]
+            })
+            - SomeViewComponent
+                - import { CanComponentDeactivate} from "can-deactivate-guard.service.ts";
+                - canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+                    if (!this.allowEdit) {
+                        return true;
+                    }
+
+                    if ((this.serverName !== this.server.name || this.serverStatus !== this.server.status) && !this.changesSaved) {
+                        return confirm("Do you want to discard the changes?");
+                    } else {
+                        return true;
+                    }
+                }
+        o. Passing Static Data to a Route
+            - Passing Data, {path: "path", component: SomeViewComponent, data: {message: "This page does not exists."}}
+            - Retrieving Data, constructor(private route: ActivatedRoute) {}
+                - this.errorMessage = this.route.snapshot.data['message'];
+                - this.route.data.subscribe(data: Data => this.errorMessage = data['message]);
+        p. Resolving Dynamic data with Resolve Guard
+            - server-resolver.service.ts
+                - import { Observabe} from "rxjs";
+                - import { Resolve, ActivatedRouteSnapshot, RouterStateSnapShot} from "@angular/router"
+                - iport { Injectable} from "@angular/core"
+                - import { TypeService} from "type.service.ts"
+                - @Injectable()
+                - constructor(private typeService: TypeService) {}
+                - export class ServerResolver implements Resolve<type> {
+                    resolve(route:ActivatedRouteSnapshot, state: RouterStateSnapShot): Observable<type> | Promise<type> | type {
+                        return this.typeService.getType(+route.params['id']);
+                    }
+                }
+            - app.module.ts
+                - @NgModule({ providers: [ServerResolver]});
+            - app-routing.module.ts
+                - { path: "path", component: SomeViewComponent, resolve: {property: ServerResolver}}
+            - type.component.ts
+                - ngOnInit() {
+                    this.route.data.subscribe((data: Data) => {
+                        this.type = data['resolve object property']
+                    });
+                }
     7. Observables
     8. Forms
     9. Pipes
