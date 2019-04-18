@@ -38,7 +38,7 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [\*ngFor](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-list/recipe-list.component.html)
 
-###### &nbsp;&nbsp;&nbsp;&nbsp; [\*ngIf](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipes/recipes.component.html)
+###### &nbsp;&nbsp;&nbsp;&nbsp; [\*ngIf]()
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Create Your Own - Basic Attribute](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/directives/basic-highlight.directive.ts)
 
@@ -75,6 +75,10 @@ To provide reference materials for a variety of topics encountered when using th
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Router Link Relative Path](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-item/recipe-item.component.html)
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Router Params Subscribe](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-detail/recipe-detail.component.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Router Navigation Absolute Path](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-detail/recipe-detail.component.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Router Navigation Relative Path](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-list/recipe-list.component.ts)
 
 ### Nodejs
 
