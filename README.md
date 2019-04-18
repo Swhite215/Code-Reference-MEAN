@@ -34,10 +34,6 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Reciving Props - Child - Component](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-item/recipe-item.component.ts)
 
-###### &nbsp;&nbsp;&nbsp;&nbsp; [Emitting Event - Child](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/layout/header.component.ts)
-
-###### &nbsp;&nbsp;&nbsp;&nbsp; [Catching Event - Parent](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/app.component.html)
-
 ##### - Directives
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [\*ngFor](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-list/recipe-list.component.html)
@@ -60,9 +56,9 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Cross Component Communication - Service Declaration](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/services/recipe.service.ts)
 
-###### &nbsp;&nbsp;&nbsp;&nbsp; [Cross Component Communication - Component Emitter](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-item/recipe-item.component.ts)
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Cross Component Communication - Emitter](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/services/shopping.service.ts)
 
-###### &nbsp;&nbsp;&nbsp;&nbsp; [Cross Component Communication - Component Receiver](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipes/recipes.component.ts)
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Cross Component Communication - Subscribed](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/shopping-list/shopping-list.component.ts)
 
 ##### - Routing
 
