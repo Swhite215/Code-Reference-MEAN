@@ -339,6 +339,53 @@ Angular Fundamentals
         e. Observable Operators
             -  Look this up on reactivex.io
     8. Forms
+        a. Types
+            - Template Dsriven, Angular infers the Form object from the DOM
+            - Reactive, Form is created programmatically and synchronized with the DOM
+        b. Template Driven
+            - in app.module.ts import FormsModule and add to imports
+            - Adding Controls
+                - <input ngModel name="value"/>
+                - <select ngModel name="option type"></select>
+            - onSubmit
+                - Form passed to method
+                    - <form (ngSubmit)="onSubmit(f)" #f="ngForm"></form>, fired whenever submit button is pressed
+                    - onSubmit(form: gForm) { console.log(form)}
+                - @ViewChild
+                    - <form (ngSubmit)="onSubmit()" #f="ngForm"></form>, fired whenever submit button is pressed
+                    - @ViewChild('f') formName: NgForm
+            - ngForm properties
+                - dirty, if anything has been changed
+                - touched, if anyone clicked into the field
+            - Validation
+                - <input ngModel name="username" required>
+                - <input ngModel name="email" required email>
+                - valid property for form is false until all inputs are valid entries
+                - controls -> input -> valid -> true or false
+            - Changing styling dynamically
+                - <button type="submit" [disabled]="!f.valid">Submit</button>
+                - css classes that are added dynamically
+                    - input.ng-invalid.ng-touched { border: 1px solid red }
+                    - input.ng-valid.ng-touched { border: 1px solid green }
+            - Outputting Validation Error Messages
+                - <input ngModel name="email" required email #email="ngModel"/>
+                - <app-warning *ngIf="!email.valid && email.touched">Please enter a valid value</app-warning>
+            - Default Values
+                - <input [ngModel]="'email@example.com'" name="email" required email #email="ngModel"/> 
+                - <select [ngModel]="componentProperty"> </select>
+            - ngModel with Two Way Binding
+                - <textarea [(ngModel)]="answer" name="questionAnswer" rows="3" ></textarea>
+                - <p>Your reply: {{answer}}</p>
+            - Grouping data
+                - <div ngModelGroup="authInputs"> <input ngModel name="username" /> <input ngModel name="password"/></div>
+            - Handling Radio Buttons
+                - <input type="radio" name="gender" ngModel [value]="gender" required /> {{ gender }}
+            - Setting up and Patching Form Values
+                - this.formName.setValue({ inputName: "value"}) within a method... not a great appraoch for individual inputs
+                - this.formName.form.patchValue({inputName: "value"});
+            - Resetting Form
+                - this.formName.reset() or this.formName.reset(stateObject)
+        c. Reactive
     9. Pipes
     10. HTTP
     11. Authentication
