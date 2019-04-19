@@ -1,5 +1,5 @@
 import { Recipe } from "../models/recipe.model";
-import { EventEmitter } from "@angular/core";
+
 import { Ingredient } from "../models/ingredient.model";
 
 export class RecipeService {
@@ -15,8 +15,6 @@ export class RecipeService {
       ]
     )
   ];
-
-  recipeSelected = new EventEmitter<Recipe>();
 
   getRecipes() {
     return [...this.recipes];
