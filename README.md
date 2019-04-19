@@ -120,7 +120,7 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Error Styling](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-edit/recipe-edit.component.css)
 
-##### TypeScript
+##### - TypeScript
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Notes](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/typescript/notes.ts)
 
