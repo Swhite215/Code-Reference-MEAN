@@ -80,6 +80,12 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Router Navigation Relative Path](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-list/recipe-list.component.ts)
 
+### TypeScript
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Notes](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/typescript/notes.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Config File](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/tsconfig.json)
+
 ### Nodejs
 
 ##### - Overview
