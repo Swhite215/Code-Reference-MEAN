@@ -33,4 +33,13 @@ export class ShoppingService {
     this.ingredients[index] = newIngredient;
     this.ingredientsChanged.emit([...this.ingredients]);
   }
+
+  deleteIngredient(i: number) {
+    this.ingredients = this.ingredients.map((ingredient, index) => {
+      if (index != i) {
+        return ingredient;
+      }
+    });
+    this.ingredientsChanged.emit([...this.ingredients]);
+  }
 }
