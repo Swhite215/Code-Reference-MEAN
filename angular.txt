@@ -386,6 +386,74 @@ Angular Fundamentals
             - Resetting Form
                 - this.formName.reset() or this.formName.reset(stateObject)
         c. Reactive
+            - Reactive Set-Up
+                - import { FormGroup, FormControl } from "@angular/forms"
+                - form: FormGroup;
+                - in app.module.ts, import ReactiveFormsModule and add to imports
+            - Creating a form in code, initialize before template is rendered
+                - ngOnInit() {
+                    this.form = new FromGroup({
+                        'username': new FormControl(null),
+                        'email': new FormControl(null),
+                        'gender': new FormControl('male')
+                    });
+                }
+            - Syncing HTML and Form
+                - <form [formGroup]="formName" ></form>
+                - <input name="username" formControlName="username" />
+            - Submitting the Form
+                - <form [formGroup]="formName" (ngSubmit)="method()" ></form>
+                - method() { console.log(this.formName); }
+            - Adding Validation
+                - import { FormGroup, FormControl, Validators } from "@angular/forms"
+                - ngOnInit() {
+                    this.form = new FromGroup({
+                        'username': new FormControl(null, Validators.required),
+                        'email': new FormControl(null, [Validators.required, Validators.email]),
+                        'gender': new FormControl('male')
+                    });
+                }
+            - Getting Access to Controls
+                - <span *ngIf="!formName.get('username').valid && formName.get('username').touched">Please enter a vaild username!</span>
+            - Grouping Controls
+                - ngOnInit() {
+                    this.form = new FromGroup({
+                        'userData': newFormGroup({
+                            'username': new FormControl(null, Validators.required),
+                            'email': new FormControl(null, [Validators.required, Validators.email]),
+                        }),
+                        'gender': new FormControl('male')
+                    });
+                }
+                - <div formGroupName="userData"><input formControlName="name" /></div>
+            - Arrays of Form Controls
+                - import { FormGroup, FormControl, Validators, FormArray } from "@angular/forms"
+                - ngOnInit() {
+                    this.form = new FromGroup({
+                        'hobbies': new FormArray([])
+                    });
+                }
+                - method() {
+                    const control = new FormControl(null, Validators.required);
+                    (<FormArray>this.form.get('hobbies')).push(control);
+                }
+                - Template
+                    - FormArrayName="hobbies"
+            - Creating custom validators
+                - Function that is called when input changes
+                - validator(control: FormControl): {[s: string]: boolean} {
+                    return { 'error code': true} else return null if validation is successful
+                }
+                - new FormControl(null, [Validators.required, this.validator.bind(this)])
+            - Using Error Codes
+                - this.formName.get('name).errors['errorName']
+            - Reacting to status or change Values
+                - this.form.statusChanges.subscribe() or this.form.valueChanges.subscribe()
+                - this.form.get('controlName').statusChanges.subscribe() or this.form.get('controlName').valueChanges.subscribe()
+            - Setting and patching Values
+                - this.form.setValue(formObject)
+                - this.form.patchValue({controlName: value})
+                - this.form.reset();
     9. Pipes
     10. HTTP
     11. Authentication
