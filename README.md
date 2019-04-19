@@ -85,3 +85,7 @@ To provide reference materials for a variety of topics encountered when using th
 ##### - Overview
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Notes]()
+
+### Testing
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Mocha with Chai Assertion Library](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/test/chai-assert.test.js)
