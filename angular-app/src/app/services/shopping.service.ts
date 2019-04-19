@@ -28,4 +28,9 @@ export class ShoppingService {
   getIngredientByIndex(index: number) {
     return [...this.ingredients][index];
   }
+
+  updatedIngredient(index: number, newIngredient: Ingredient) {
+    this.ingredients[index] = newIngredient;
+    this.ingredientsChanged.emit([...this.ingredients]);
+  }
 }
