@@ -36,4 +36,14 @@ export class RecipeService {
     this.recipes[index] = newRecipe;
     this.recipesChanged.next([...this.recipes]);
   }
+
+  deleteRecipe(i: number) {
+    this.recipes = this.recipes.map((recipe, index) => {
+      if (index != i) {
+        return recipe;
+      }
+    });
+
+    this.recipesChanged.next([...this.recipes]);
+  }
 }
