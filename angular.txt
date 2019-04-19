@@ -13,6 +13,7 @@ Angular Fundamentals
             - ng generate c components/name
             - ng generate d directives/name
             - ng generate s services/name
+            - ng genereate p pipes/name
     3. Components & Data Bindings
         a. @Component
             - selector = html binding name, app-name, .class, #id, [attribute]
@@ -455,6 +456,66 @@ Angular Fundamentals
                 - this.form.patchValue({controlName: value})
                 - this.form.reset();
     9. Pipes
+        a. What are pipes?
+            - A feature built into Angular that allows you to transform output in your template
+        b. Using a Pipe
+            - {{ value | pipeName}}
+            - {{ value | pipeName:'parameter'}}
+            - {{ value | pipeName } anotherPipeName}
+        c. Types of pipes
+            - async, value should be promise/observable
+            - data
+            - lowercase
+            - uppercase
+            - currency
+            - percent
+            - json
+            - number
+        d. Where to learn about pipes
+            - https://angular.io/api?type=pipe
+        e. Creating your own pipe
+            - import { PipeTransform, Pipe} from "@angular/core";
+            - @Pipe({
+                name: 'pipeName'
+            })
+            - export class PipeName implements PipeTransform {
+                transform(value: any, limit: number) {
+                    if (value.length > limit) {
+                        return value.substr(0, limit);
+                    }
+                    return value;
+                }
+            }
+            - in app.module.ts
+                - @NgModule({declaratins: PipeName})
+        f. Creating a filter pipe
+            - import { PipeTransform, Pipe} from "@angular/core";
+            - @Pipe({
+                name: 'filter'
+            })
+            - export class FilterPipe implements PipeTransform {
+                transform(value: any, filterString: string): any {
+                    if (value.length === 0) {
+                        return value;
+                    }
+                    const resultsArray = [];
+                    for (let item of value) {
+                        if (item[propName] === filterString) {
+                            resultsArray.push(item);
+                        }
+                    }
+                    return resultsArray;
+                }
+            }
+            - in app.module.ts
+                - @NgModule({declaratins: FilterPipe})
+            - component template
+                *ngFor="let something of stuff | filter:filterString:'property'"
+        g. Pipes do not update when Objects or Arrays are updated
+            - Change behavior
+            - @Pipe({
+                name: 'filter', pure: false
+            })
     10. HTTP
     11. Authentication
     12. Optimizations & NgModules
