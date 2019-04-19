@@ -58,7 +58,7 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Cross Component Communication - Emitter](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/services/shopping.service.ts)
 
-###### &nbsp;&nbsp;&nbsp;&nbsp; [Cross Component Communication - Subscribed](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/shopping-list/shopping-list.component.ts)
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Cross Component Communication - Subscriber](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/shopping-list/shopping-list.component.ts)
 
 ##### - Routing
 
