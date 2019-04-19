@@ -4,7 +4,7 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ShoppingListComponent } from "./components/shopping-list/shopping-list.component";
 import { ShoppingListEditComponent } from "./components/shopping-list-edit/shopping-list-edit.component";
 import { RecipeListComponent } from "./components/recipe-list/recipe-list.component";
@@ -17,8 +17,8 @@ import { BetterHighlightDirective } from "./directives/better-highlight.directiv
 import { UnlessDirective } from "./directives/unless.directive";
 import { DropDownDirective } from "./directives/dropdown.directive";
 import { ShoppingService } from "./services/shopping.service";
-import { RecipeStartComponent } from './components/recipe-start/recipe-start.component';
-import { RecipeEditComponent } from './components/recipe-edit/recipe-edit.component';
+import { RecipeStartComponent } from "./components/recipe-start/recipe-start.component";
+import { RecipeEditComponent } from "./components/recipe-edit/recipe-edit.component";
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { RecipeEditComponent } from './components/recipe-edit/recipe-edit.compon
     RecipeStartComponent,
     RecipeEditComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [ShoppingService],
   bootstrap: [AppComponent]
 })
