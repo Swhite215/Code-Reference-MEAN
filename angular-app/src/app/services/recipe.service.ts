@@ -23,4 +23,12 @@ export class RecipeService {
   getRecipeById(id: number) {
     return [...this.recipes][id];
   }
+
+  addRecipe(recipe: Recipe) {
+    return [...this.recipes, recipe;]
+  } 
+
+  updateRecipe(index: number, newRecipe: Recipe) {
+    this.recipes[index] = newRecipe;
+  }
 }
