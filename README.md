@@ -54,6 +54,8 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Multiple Services](https://github.com/Swhite215/Code-Reference-MEAN/tree/master/angular-app/src/app/services)
 
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Services - CRUD](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/services/shopping.service.ts)
+
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Cross Component Communication - Service Declaration](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/services/recipe.service.ts)
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Cross Component Communication - Emitter](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/services/shopping.service.ts)
@@ -79,6 +81,26 @@ To provide reference materials for a variety of topics encountered when using th
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Router Navigation Absolute Path](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-detail/recipe-detail.component.ts)
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Router Navigation Relative Path](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-list/recipe-list.component.ts)
+
+##### - Observables
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Subject Declaration](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/services/shopping.service.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Subject Next Emitter](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/shopping-list/shopping-list.component.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Subject Subscription](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/shopping-list-edit/shopping-list-edit.component.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Subject Unsubscribe](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/shopping-list-edit/shopping-list-edit.component.ts)
+
+##### - Forms
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Template Driven - Reference and NgForm](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/shopping-list-edit/shopping-list-edit.component.html)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Template Driven - Inputs, Names, and Validation](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/shopping-list-edit/shopping-list-edit.component.html)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Template Driven - Accessing Form Values](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/shopping-list-edit/shopping-list-edit.component.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Template Driven - Form Reset](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/shopping-list-edit/shopping-list-edit.component.ts)
 
 ### TypeScript
 
