@@ -305,6 +305,39 @@ Angular Fundamentals
                     });
                 }
     7. Observables
+        a. What is an observable?
+            - Observable, A data source
+            - Observer, .subscribe to handle data, handle error, handle completion
+            - .subscribe(handleData() {}, handleError() {}, handleCompletion() {})
+            - observer.next() pushes next data package
+            - observer.complete() finished
+            - observer.error() emits error
+            - this.observer.unsubscribe() in ngOnDelete()
+        b. Creating your own #1
+            - import { Observable} from "rxjs";
+            - import "rxjs/Rx";
+            - const myNumbers = Observable.interval(ms);
+            - myNumbers.subscribe(handleData(num: number) {console.log(num)}, handleError() {}, handleCompletion() {});
+        c. Creating your own #2
+            - import { Observable} from "rxjs";
+            - import "rxjs/Rx";
+            - import { Observer} from "rxjs/Rx";
+            - const myObservable = Observable.create((observer: Observer) => {
+                setTimeout(function() {
+                    observer.next("first package")
+                } 2000);
+                setTimeout(function() {
+                    observer.next("second package")
+                } 4000);
+                 setTimeout(function() {
+                    observer.error("This does not work")
+                } 5000);
+            })
+            - myObservable.subscribe((data: string) => console.log(data), (error: string) => console.log(error))
+        d. Subject
+            - Like an observable, use for component communication
+        e. Observable Operators
+            -  Look this up on reactivex.io
     8. Forms
     9. Pipes
     10. HTTP
