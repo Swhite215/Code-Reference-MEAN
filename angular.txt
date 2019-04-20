@@ -558,7 +558,17 @@ Angular Fundamentals
                 - return this.http.patch(url, data, {headers: headers});
         e. Async Pipe
             - {{ varName | async }}
+        f. Receiving the full response with HttpClient
+            - in options object add {observe: 'response'}
     11. Authentication
+        a. Traditional Web App
+            - Client and Server
+            - Server stores the session in something like a DB
+            - Cookies sent to auth
+        b. Single Page Application
+            - Send Auth Information
+            - Token returned
+            - Token used for authentication
     12. Optimizations & NgModules
     13. Deployment
     14. Animations and Testing
