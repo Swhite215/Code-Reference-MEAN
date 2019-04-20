@@ -594,6 +594,39 @@ Angular Fundamentals
             - Token returned
             - Token used for authentication
     12. Optimizations & NgModules
+        a. What are modules?
+            - Bundles
+        b. Feature Modules
+            - Spit Modules by Application feature
+        c. Shared Modules
+            - Create custom module and import to both
+        d. Common Gotcha
+            - FormsModule needs to be in every module it is used
+        e. Lazy Loading
+            - Not loading a component until it is needed
+        f. Core Module
+            - Module with items used by the root of the projected
+        g. JIT vs AoT Compilation
+            - Just in Time - Method used on JavaScript on the browser side
+            - Ahead of Time - Parse and Compile before deployment to production
+                - Faster, Templates get checked, Smaller size
+                - Command, ng build --prod --aot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        b.
     13. Deployment
         a. Steps
             - Build for production, consider AoT compilation 
@@ -685,5 +718,3 @@ Angular Fundamentals
                 - webpack.config.prod.js
                 - npm build:prod
             - bs-config.js
-
-        
