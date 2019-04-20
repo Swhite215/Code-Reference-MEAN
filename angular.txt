@@ -541,10 +541,15 @@ Angular Fundamentals
                         const data = response.json();
                     }, (err: Response) => {console.log(err)})
                 }
-        c. Adusting Request Headers
-            - import { HttpHeaders } from "@angular/common/http";
-            - const headers = new HttpHeaders({ headerProperty: value})
-            - return this.http.method(url, data, {headers: headers})
+        c. Request Headers and Query Params
+            - Headers
+                - import { HttpHeaders } from "@angular/common/http";
+                - const headers = new HttpHeaders({ headerProperty: value})
+                - return this.http.method(url, data, {headers: headers})
+            - Params
+                - import { HttpParams } from "@angular/common/http";
+                - const params = new HttpParams({ key: value})
+                - return this.http.method(url, data, {headers: headers, params: params})
         d. Methods
             - GET Requests
                 - return this.http.get(url, {headers: headers});
@@ -560,6 +565,25 @@ Angular Fundamentals
             - {{ varName | async }}
         f. Receiving the full response with HttpClient
             - in options object add {observe: 'response'}
+        g. Interceptors
+            - auth.interceptor.ts
+                - import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent} from "@angular/common/http"
+                - import { Observable} from "rxjs";
+                - @Injectable()
+                - export class AuthInterceptor implements HttpInterceptor{
+                    constructor(private authService: AuthService) {}
+                    intercept(req: HttpRequest<any>, next: HttpHandler):Observable<HttpEvent<any>> {
+                        return next.handle(req);
+                    }
+                }
+                - Requests are immutable, must clone before you edit it
+                    - let token = authService.getToken();
+                    - let configObject = {headers: req.headers.append(key, value), params: req.params.set("Auth", token)}
+                    - const copiedRequest = req.clone(configObject);
+            - app.module.ts 
+                - import { HTTP_INTERCEPTORS} from "@angular/common/http";
+                - import { AuthInterceptor} from "auth.interceptor.ts":
+                - @NgModule({providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}]})
     11. Authentication
         a. Traditional Web App
             - Client and Server
