@@ -595,6 +595,95 @@ Angular Fundamentals
             - Token used for authentication
     12. Optimizations & NgModules
     13. Deployment
-    14. Animations and Testing
-    15. Typescript
+        a. Steps
+            - Build for production, consider AoT compilation 
+                - ng build --prod --aot 
+            - Set correct base element
+                - if example/com/my-app, <base href="/my-app/">
+            - Make sure your server always returns the index.html!
+    14. Workflow
+        a. Order
+            - npm commands
+                - npm init
+                - npm install --save
+                    - @angular/core
+                    - @angular/common
+                    - @angular/compiler
+                    - @angular/compiler-cli
+                    - @angular/forms
+                    - @angular/http or @angular/common/http
+                    - @angular/platform-browser
+                    - @angular/platform-browser-dynamic
+                    - @angular/platform-server
+                    - @angular/router
+                    - @angular/upgrade
+                    - @angular/animations
+                    - rxjs
+                    - zone.js
+                    - core-js
+                - npm install --save -dev
+                    - webpack
+                    - webpack-dev-server
+                    - angular-router-loader
+                    - angular2-template-loader
+                    - awesome-typescript-loader
+                    - html-loader
+                    - raw-loader
+                    - typescript
+                    - del-cli
+                    - html-webpack-plugin
+                    - @types/core-json
+                    - @types/node
+            - add gitignore file
+            - Basic Project Files
+                - src
+                    - app
+                        - main.ts
+                            - Core Dependencies
+                                - import '../polyfills';
+                                - platformBrowserDynamic, AppModule
+                                - platformBrowserDynamic().bootstrapModule(AppModule)
+                        - app.module.ts
+                            - Import NgModule
+                            - @NgModule({providers: [], declarations: [], boostrap: [], imports: []})
+                            - export class AppModule {}
+                        - app-routing.module.ts
+                            - Import NgModule, RouterModule
+                            - const appRoutes: Routes = [{path: "", component: ViewComponent}]
+                            - @NgModule({ imports: [RouterModule.forRoot(appRoutes)], exports: [RouterModule]})
+                        - app.component.ts
+                            - regular component file conected to html and css
+                        - app.component.html
+                        - app.component.css
+                        - home.component.ts
+                        - users
+                            - users.module.ts
+                            - users-routing.module.ts
+                            - user.component.ts
+                            - users.component.css
+                            - users.component.html
+                - index.html
+                    - Emmett HTML5
+                    - <base href="/" />
+                    - <app-root></app-root>
+                - polyfill.ts
+                    - import 'core-js/es6';
+                    - import 'core-js/es7/reflect';
+                    - require('zone/js/dist/zone');
+            - tsconfig.json
+            - webpack.config.dev.js
+            - webpack.config.common.js
+            - webpack.config.prod.js
+            - Upgrade to Angular 6+ and Webpack 4
+            - Development workflow
+                - webpack.config.dev.js
+                - webpack.config.common.js
+                - npm test and build commands
+            - Production workflow
+                - main.aot.ts
+                - tsconfig.aot.ts
+                - webpack.config.prod.js
+                - npm build:prod
+            - bs-config.js
+
         
