@@ -120,6 +120,14 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Error Styling](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/components/recipe-edit/recipe-edit.component.css)
 
+##### - HTTP Client Module
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Module Import](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/app.module.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [CRUD Methods Declaration](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/services/data-storage.service.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [CRUD Methods Component Subscription](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/layout/header.component.ts)
+
 ##### - TypeScript
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Notes](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/typescript/notes.ts)
