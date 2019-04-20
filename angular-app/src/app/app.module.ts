@@ -20,8 +20,9 @@ import { ShoppingService } from "./services/shopping.service";
 import { RecipeStartComponent } from "./components/recipe-start/recipe-start.component";
 import { RecipeEditComponent } from "./components/recipe-edit/recipe-edit.component";
 import { RecipeService } from "./services/recipe.service";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { DataStorageService } from "./services/data-storage.service";
+import { AuthInterceptor } from "./interceptors/auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,12 @@ import { DataStorageService } from "./services/data-storage.service";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ShoppingService, RecipeService, DataStorageService],
+  providers: [
+    ShoppingService,
+    RecipeService,
+    DataStorageService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
