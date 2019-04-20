@@ -152,6 +152,8 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Notes]()
 
-### Testing
+##### Testing
 
-###### &nbsp;&nbsp;&nbsp;&nbsp; [Mocha with Chai Assertion Library](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/test/chai-assert.test.js)
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Mocha with Chai Assertion TDD](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/test/chai-assert.test.js)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Mocha with Chai Should BDD](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/test/chai-should.test.js)
