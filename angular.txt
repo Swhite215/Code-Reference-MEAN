@@ -618,7 +618,25 @@ Angular Fundamentals
             - Set correct base element
                 - if example/com/my-app, <base href="/my-app/">
             - Make sure your server always returns the index.html!
-    14. Workflow
+    14. Testing
+        a. Topics in Angular Testing
+            - TestBed
+                - let fixture = TestBed.createComponent(component)
+                - beforeEach(()=> {
+                    TestBed.conigureTestingModule({
+                        declarations: [Component]
+                    })
+                })
+                - fixture.detectChanges(), for updates after component creation
+                - let app = fiture.debugElement.componentInstance;
+                - let service = fixture.debugElement.injector.get(serviceName);
+                - let spy = spyOn(service, 'methodName)
+            - Assertions
+                - expect(component.property).method(value)
+            - Commands
+                - ng test
+                - ng test --no-watch --code-coverage
+    15. Workflow
         a. Order
             - npm commands
                 - npm init
