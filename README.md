@@ -130,6 +130,16 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [HTTP Interceptor](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/interceptors/auth.interceptor.ts)
 
+##### - Modules
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Module Import](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/app.module.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Feature Module](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/modules/recipes.module.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Shared Module](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/modules/shared-directive.module.ts)
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Lazy Loading](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/src/app/app.module.ts)
+
 ##### - TypeScript
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Notes](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/typescript/notes.ts)
