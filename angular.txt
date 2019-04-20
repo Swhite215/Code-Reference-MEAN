@@ -611,22 +611,6 @@ Angular Fundamentals
             - Ahead of Time - Parse and Compile before deployment to production
                 - Faster, Templates get checked, Smaller size
                 - Command, ng build --prod --aot
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        b.
     13. Deployment
         a. Steps
             - Build for production, consider AoT compilation 
