@@ -517,6 +517,47 @@ Angular Fundamentals
                 name: 'filter', pure: false
             })
     10. HTTP
+        a. What is HTTP in SPAs?
+            - HTTP request and response
+        b. HTTP Examples
+            - server.service.ts
+                - import { Injectable} from "@angular/core"
+                - import { HttpClient } from "@angular/common/http"
+                - @Injectable(), to inject HTTP module
+                - export class Service {
+                    constructor(private http: HttpClient) {}
+                    storeServer(service: any[]) {
+                        return this.http.post(url, server)
+                    }
+                }
+             - app.module.ts
+                - import { HttpClientModule} from "@angular/commom/http";
+                @NgModule({imports: [HttpClientModule], providers: [Service]}), after Browser!
+            - somethig.component.ts
+                - import {Service} from "service.ts";
+                - constructor(private service: Service){}
+                - method() {
+                    this.service.method(arguments).subscribe((response: Response) => {
+                        const data = response.json();
+                    }, (err: Response) => {console.log(err)})
+                }
+        c. Adusting Request Headers
+            - import { HttpHeaders } from "@angular/common/http";
+            - const headers = new HttpHeaders({ headerProperty: value})
+            - return this.http.method(url, data, {headers: headers})
+        d. Methods
+            - GET Requests
+                - return this.http.get(url, {headers: headers});
+            - PUT Requests
+                - return this.http.put(url, data, {headers: headers})
+            - POST
+                - return this.http.post(url, data, {headers: headers});
+            - DELETE
+                - return this.http.delete(url, {headers: headers});
+            - PATCH
+                - return this.http.patch(url, data, {headers: headers});
+        e. Async Pipe
+            - {{ varName | async }}
     11. Authentication
     12. Optimizations & NgModules
     13. Deployment
