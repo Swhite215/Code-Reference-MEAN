@@ -15,8 +15,8 @@ export class HeaderComponent {
     this.dataStorageService
       .updateData(data)
       .subscribe(
-        (response: Response) => console.log(response),
-        (error: Response) => console.log(error)
+        response => console.log(response),
+        error => console.log(error)
       );
   }
 
@@ -24,8 +24,8 @@ export class HeaderComponent {
     this.dataStorageService
       .createData(data)
       .subscribe(
-        (response: Response) => console.log(response),
-        (error: Response) => console.log(error)
+        response => console.log(response),
+        error => console.log(error)
       );
   }
 
@@ -33,8 +33,8 @@ export class HeaderComponent {
     this.dataStorageService
       .fetchData()
       .subscribe(
-        (response: Response) => console.log(response),
-        (error: Response) => console.log(error)
+        response => console.log(response),
+        error => console.log(error)
       );
   }
 
@@ -42,8 +42,8 @@ export class HeaderComponent {
     this.dataStorageService
       .deleteData(id)
       .subscribe(
-        (response: Response) => console.log(response),
-        (error: Response) => console.log(error)
+        response => console.log(response),
+        error => console.log(error)
       );
   }
 }
