@@ -4,6 +4,30 @@ const secretFile = require("../secrets/example.json");
 class CrudAPI {
     constructor() {}
 
+    create_something(categoryId, dataObj) {
+        let url = `https://api.example.co/api/category/${categoryId}/secondaryCategory`;
+        let body = JSON.stringify(dataObj);
+
+        return axios
+            .post(url, body, {
+                headers: {
+                    Authorization: secretFile.Bearer_Token,
+                    "content-type": "application/json"
+                }
+            })
+            .then(response => {
+                console.log(`Created Something: ${response.data.name}`);
+                return response.data;
+            })
+            .catch(err => {
+                console.log(
+                    `Service Error ${err.response.status}:  ${
+                        err.response.statusText
+                    }`
+                );
+            });
+    }
+
     get_something(categoryId, secondaryCategoryId) {
         let url = `https://api.example.co/api/category/${categoryId}/secondaryCategory/${secondaryCategoryId}`;
 
@@ -14,106 +38,71 @@ class CrudAPI {
             })
             .catch(err => {
                 console.log(
-                    `Signal Service Error ${err.response.status}:  ${
+                    `Service Error ${err.response.status}:  ${
                         err.response.data.message
                     }`
                 );
             });
     }
 
-    get_somethings(siteId) {
-        let url = `https://api.signal.co/v2/tms/sites/${siteId}/tags`;
+    get_somethings(categoryId) {
+        let url = `https://api.example.co/api/category/${categoryId}/secondaryCategory`;
 
         return axios
-            .get(url, { headers: { Authorization: signalSecret.Bearer_Token } })
+            .get(url, { headers: { Authorization: secretFile.Bearer_Token } })
             .then(response => {
                 return response.data;
             })
             .catch(err => {
                 console.log(
-                    `Signal Service Error ${err.response.status}:  ${
+                    `Service Error ${err.response.status}:  ${
                         err.response.data.message
                     }`
                 );
             });
     }
 
-    get_page(siteId, pageId) {
-        let url = `https://api.signal.co/v2/tms/sites/${siteId}/pages/${pageId}`;
+    update_something(categoryId, secondaryCategoryId, dataObj) {
+        let url = `https://api.example.co/api/category/${categoryId}/secondaryCategory/${secondaryCategoryId}`;
+        let body = JSON.stringify(dataObj);
 
         return axios
-            .get(url, { headers: { Authorization: signalSecret.Bearer_Token } })
-            .then(response => {
-                return response.data;
-            })
-            .catch(err => {
-                console.log(
-                    `Signal Service Error ${err.response.status}:  ${
-                        err.response.data.message
-                    }`
-                );
-            });
-    }
-
-    get_pages(siteId) {
-        let url = `https://api.signal.co/v2/tms/sites/${siteId}/pages`;
-
-        return axios
-            .get(url, { headers: { Authorization: signalSecret.Bearer_Token } })
-            .then(response => {
-                return response.data;
-            })
-            .catch(err => {
-                console.log(
-                    `Signal Service Error ${err.response.status}:  ${
-                        err.response.data.message
-                    }`
-                );
-            });
-    }
-
-    create_tag(siteId, signalObj) {
-        let url = `https://api.signal.co/v2/tms/sites/${siteId}/tags`;
-        let body = JSON.stringify(signalObj);
-
-        return axios
-            .post(url, body, {
+            .put(url, body, {
                 headers: {
-                    Authorization: signalSecret.Bearer_Token,
+                    Authorization: secretFile.Bearer_Token,
                     "content-type": "application/json"
                 }
             })
             .then(response => {
-                console.log(`Created Signal Tag: ${response.data.name}`);
+                console.log(`Updated Something: ${response.data.name}`);
                 return response.data;
             })
             .catch(err => {
                 console.log(
-                    `Signal Service Error ${err.response.status}:  ${
+                    `Service Error ${err.response.status}:  ${
                         err.response.statusText
                     }`
                 );
             });
     }
 
-    update_tag(siteId, tagId, signalObj) {
-        let url = `https://api.signal.co/v2/tms/sites/${siteId}/tags/${tagId}`;
-        let body = JSON.stringify(signalObj);
+    delete_something(categoryId, secondaryCategoryId) {
+        let url = `https://api.example.co/api/category/${categoryId}/secondaryCategory/${secondaryCategoryId}`;
 
         return axios
-            .put(url, body, {
+            .delete(url, {
                 headers: {
-                    Authorization: signalSecret.Bearer_Token,
+                    Authorization: secretFile.Bearer_Token,
                     "content-type": "application/json"
                 }
             })
             .then(response => {
-                console.log(`Updated Signal Tag: ${response.data.name}`);
+                console.log(`Deleted Something: ${response.data.name}`);
                 return response.data;
             })
             .catch(err => {
                 console.log(
-                    `Signal Service Error ${err.response.status}:  ${
+                    `Service Error ${err.response.status}:  ${
                         err.response.statusText
                     }`
                 );
@@ -121,4 +110,4 @@ class CrudAPI {
     }
 }
 
-module.exports = new SignalAPI();
+module.exports = new CrudAPI();
