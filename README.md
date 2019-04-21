@@ -16,7 +16,7 @@ To provide reference materials for a variety of topics encountered when using th
 
 ##### - Overview
 
-###### &nbsp;&nbsp;&nbsp;&nbsp; [Notes](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular.txt)
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Notes](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/angular-app/angular.txt)
 
 ##### - Components & Databindings
 
@@ -150,7 +150,7 @@ To provide reference materials for a variety of topics encountered when using th
 
 ##### - Overview
 
-###### &nbsp;&nbsp;&nbsp;&nbsp; [Notes]()
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Notes](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/server/node.txt)
 
 ##### Testing
 
