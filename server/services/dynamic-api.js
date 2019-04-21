@@ -1,9 +1,8 @@
 const axios = require("axios");
 const fs = require("fs");
-const adobeSecret = require("../secrets/adobe_secret.json");
+const secretFile = require("../secrets/example.json");
 
-//Link to Adobe Launch Documentation - https://developer.adobelaunch.com/api/
-class AdobeAPI {
+class DynamicAPI {
     constructor() {
         this.token = JSON.parse(
             fs.readFileSync("../secrets/token.json", "UTF-8")
@@ -11,16 +10,15 @@ class AdobeAPI {
         this.headers = {
             Accept: "application/vnd.api+json;revision=1",
             "Content-Type": "application/vnd.api+json",
-            "X-Api-Key": adobeSecret.X_Api_Key,
+            "X-Api-Key": secretFile.X_Api_Key,
             Authorization: this.token.access_token
         };
         this.url = "";
     }
 
     async get_bearer() {
-        let url =
-            "https://adobeioruntime.net/api/v1/web/io-solutions/default/jwt";
-        let body = adobeSecret.client_secret;
+        let url = "https://authservice.net/api/jwt";
+        let body = secretFile.client_secret;
         let headers = {
             "Cache-Control": "no-cache",
             "Content-Type": "application/x-www-form-urlencoded"
@@ -38,7 +36,7 @@ class AdobeAPI {
             })
             .catch(err => {
                 console.log(
-                    `Adobe Service Error: ${err.response.status}: ${
+                    `Service Error: ${err.response.status}: ${
                         err.response.data.message
                     }`
                 );
@@ -47,10 +45,10 @@ class AdobeAPI {
 
     generateRequestURL(objectType, objectId, secondaryObjectType = null) {
         if (secondaryObjectType) {
-            this.url = `https://reactor.adobe.io/${objectType}/${objectId}/${secondaryObjectType}`;
+            this.url = `https://api.example.com/${objectType}/${objectId}/${secondaryObjectType}`;
             return this;
         } else {
-            this.url = `https://reactor.adobe.io/${objectType}/${objectId}`;
+            this.url = `https://api.example.com/${objectType}/${objectId}`;
             return this;
         }
     }
@@ -70,7 +68,7 @@ class AdobeAPI {
                     this.get_bearer();
                 } else {
                     console.log(
-                        `Adobe Service Error ${err.response.status}:  ${
+                        `Service Error ${err.response.status}:  ${
                             err.response.data.message
                         }`
                     );
@@ -89,7 +87,7 @@ class AdobeAPI {
             .catch(err => {
                 console.log(err);
                 console.log(
-                    `Adobe Service Error ${err.response.status}:  ${
+                    `Service Error ${err.response.status}:  ${
                         err.response.data.message
                     }`
                 );
@@ -107,7 +105,7 @@ class AdobeAPI {
             .catch(err => {
                 console.log(err);
                 console.log(
-                    `Adobe Service Error ${err.response.status}:  ${
+                    `Service Error ${err.response.status}:  ${
                         err.response.data.message
                     }`
                 );
@@ -129,7 +127,7 @@ class AdobeAPI {
                     this.get_bearer();
                 } else {
                     console.log(
-                        `Adobe Service Error ${err.response.status}:  ${
+                        `Service Error ${err.response.status}:  ${
                             err.response.data.message
                         }`
                     );
@@ -138,4 +136,4 @@ class AdobeAPI {
     }
 }
 
-module.exports = new AdobeAPI();
+module.exports = new DynamicAPI();
