@@ -2,7 +2,7 @@ const should = require("chai").should();
 
 //Issues with Internet Explorer
 describe("Chai Should BDD Library", function() {
-    it("allows checking for a value type.", function() {
+    it("allows checking for a value type", function() {
         let string = "";
         let number = 4;
         let array = [];
