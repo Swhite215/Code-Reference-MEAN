@@ -160,7 +160,7 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Using Services](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/server/services/using-services.js)
 
-##### Testing
+##### - Testing
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Mocha with Chai Assertion TDD](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/test/chai-assert.test.js)
 
