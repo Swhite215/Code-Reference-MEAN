@@ -112,10 +112,6 @@ describe("Chai Assertion Library", function() {
         assert.isNotFunction(1);
     });
 
-    it("contains .isNotFunction()", function() {
-        assert.isNotFunction(1);
-    });
-
     it("contains .isObject()", function() {
         assert.isObject({});
     });
