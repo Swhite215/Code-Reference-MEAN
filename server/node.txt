@@ -1,0 +1,8 @@
+Node Fundamentals
+    1. What is Node?
+        a. Runtime
+            - Allows you to run JavaScript on the server side/outside of the browser
+            - Uses the v8 engine and uses JIT compilation
+    2. How does it work?
+        a. Event Loop
+            - Continously running event loop if events are registered
