@@ -37,5 +37,9 @@ Node Fundamentals
             - Packages
                 - Express, framework for restless server
                 - Nodemon, development tool for process management, restarting
+        d. Errors
+            - Syntax Errors
+            - Runtime Errors
+            - Logical Errors
             
             
