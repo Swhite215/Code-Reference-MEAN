@@ -91,6 +91,19 @@ Docker Fundamentals
                 - docker login
                 - docker image tag imageName newImageName
                 - docker image push imageName
+    5. Building Images
+        a. Docker File
+            - Composition, each stanza is a layer in the image
+                - FROM: required, a minimal distribution to save time and pain
+                - ENV: environment variables, main way we set keys and values for container building and running containers
+                - RUN: executing shell commands, file edits, zipping, container commands
+                    - Chain commands to ensure all commands are a single layer
+                - RUN: set up logging correctly to stdout and stderr
+                - EXPOSE: by default no tcp or udp ports are open in a container, we expose ports here
+                - CMD: required parameter, final command that will be run everytime a container is launched or restarted
+        b. Building
+            - docker image build -t customName ., within directory with dockerfile
+            - Keep that which changes least at top of dockerfile, and most at the bottom
     X. Docker Commands
         a. docker version, returns version of client and server
         b. docker info, returns configuration details
@@ -133,7 +146,8 @@ Docker Fundamentals
         gg. docker image tag imageName newImageName
         hh. docker image push imageName
         ii. docker login, logs into docker hub
-        j. docker logout, logs out from docker hub
+        jj. docker logout, logs out from docker hub
+        kk. docker image build -t customName ., builds docker image from file inside this directory
     X. Resources
         a. landscape.cncf.io
         b. hub.docker.com
