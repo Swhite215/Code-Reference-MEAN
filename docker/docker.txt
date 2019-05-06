@@ -100,6 +100,7 @@ Docker Fundamentals
                     - Chain commands to ensure all commands are a single layer
                 - RUN: set up logging correctly to stdout and stderr
                 - EXPOSE: by default no tcp or udp ports are open in a container, we expose ports here
+                - WORKDIR: change working directory and continue running commands
                 - CMD: required parameter, final command that will be run everytime a container is launched or restarted
         b. Building
             - docker image build -t customName ., within directory with dockerfile
