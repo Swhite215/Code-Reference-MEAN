@@ -34,11 +34,12 @@ function requestListener(req, res) {
             const parsedBody = Buffer.concat(body).toString();
             console.log(parsedBody); //Parsed Buffer Array String
             const message = parrsedBody.split("=")[1];
+
             fs.writeFileSync("message.txt", message);
+            res.statusCode = 302;
+            res.setHeader("Location", "/");
+            return res.end();
         });
-        res.statusCode = 302;
-        res.setHeader("Location", "/");
-        return res.end();
     }
 }
 
