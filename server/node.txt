@@ -6,3 +6,20 @@ Node Fundamentals
     2. How does it work?
         a. Event Loop
             - Continously running event loop if events are registered
+            - Blocking
+                - Stops execution of code on the thread
+                - Any Sync methods
+            - Non-Blocking
+                - Does not stop execution of code on the thread
+                - Promises, Event Callbacks, Async/Await code
+        b. Node Modules
+            - All files are wrapped with code as a Modules
+            - Components of a module
+                - __filename
+                - __dirname
+                - module
+                - require
+                - module.exports.log
+                - module.exports = log
+                - exports.log = log
+            
