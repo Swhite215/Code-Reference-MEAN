@@ -18,7 +18,7 @@ Docker Fundamentals
         d. Edge, Beta released monthly
     3. Creating and Using Containers Like a Boss
         a. Image vs. Container
-            - Image - binaries and source code that make up the application we want to runn
+            - Image - binaries and source code that make up the application we want to run
             - Container - running instance of an image
             - Registry - collection of images
         b. Container vs. VM
@@ -57,6 +57,40 @@ Docker Fundamentals
             - Create a network
             - Create two containers attached to created network, add net alias search
             - Test...?
+    4. Docker Images
+        a. What is an Image?
+            - Is
+                - Applications binaries and dependencies
+                - Meta data about the image data and how to run the image
+                - Official: "An image is an ordered collection of root filesystem changes and the corresponding exection paramters for use within a container runtime."
+                - Can be extremely small
+                - Can be large with own ubuntu, apache, php, etc.
+            - Is not
+                - Not a complete OS, no kernel, kernel modules
+        b. Docker Hub Registry
+            - Official 
+                - Images are high quality images
+                - High quality documentation
+                - Versions
+                    - Referred to by multiple tags
+                    - docker pull image:version/tag
+            - Alpine
+                - A distribution of Linux that is very small
+            - Quality
+                - Downloads and Stars
+        c. Image Layers
+            - First layer is scratch
+            - Additional changes become new layers
+            - Each layer is uniquely identified and only store once on a host
+            - Union File System
+            - Container = new Read Write Layer on top of an image
+            - Copy-On-Write, take file out of image and store copy of file in the image container
+        d. Image Tagging
+            - Repository (Username or Org/ Repository), Tag based on image id
+            -  Publishing
+                - docker login
+                - docker image tag imageName newImageName
+                - docker image push imageName
     X. Docker Commands
         a. docker version, returns version of client and server
         b. docker info, returns configuration details
@@ -93,6 +127,13 @@ Docker Fundamentals
         aa. docker container run -d --name name --network networkName image
         bb. docker network connect networkName or networkId and containerName or containerId
         cc. docker network disconnect networkName or networkId and containerName or containerId
+        dd. docker pull imageName, pulls docker image to your computer
+        ee. docker history imageName, shows image layers
+        ff. docer image inspect imageName or imageId, returns meta data about the image
+        gg. docker image tag imageName newImageName
+        hh. docker image push imageName
+        ii. docker login, logs into docker hub
+        j. docker logout, logs out from docker hub
     X. Resources
         a. landscape.cncf.io
         b. hub.docker.com
