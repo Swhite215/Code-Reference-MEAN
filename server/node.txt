@@ -19,7 +19,14 @@ Node Fundamentals
                 - __dirname
                 - module
                 - require
-                - module.exports.log
-                - module.exports = log
-                - exports.log = log
+                - exports
+        c. NPM Scripts
+            - NPM
+                - Node Package Manager
+            - Commands
+                - npm init, initializes a project and builds a package.json file
+                - npm start
+                - npm test
+                - npm run command
+            
             
