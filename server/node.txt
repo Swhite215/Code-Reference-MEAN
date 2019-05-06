@@ -28,5 +28,14 @@ Node Fundamentals
                 - npm start
                 - npm test
                 - npm run command
+            - Installing Packages
+                - npm install package
+                - npm install package@version
+                - npm install -g package
+                - npm install --save-dev package
+                - npm install --save package
+            - Packages
+                - Express, framework for restless server
+                - Nodemon, development tool for process management, restarting
             
             
