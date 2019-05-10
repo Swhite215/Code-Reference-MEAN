@@ -33,7 +33,7 @@ Angular Fundamentals
                 - in component method
                     - (<HTMLInputElement>event.target).value
             - Two Way Binding
-                - [(ngMode)]="data"
+                - [(ngModel)]="data"
             - Custom Properties
                 - *ngFor="let data of array"
                 - Loop Level, [property]="data"
@@ -341,7 +341,7 @@ Angular Fundamentals
             -  Look this up on reactivex.io
     8. Forms
         a. Types
-            - Template Dsriven, Angular infers the Form object from the DOM
+            - Template Driven, Angular infers the Form object from the DOM
             - Reactive, Form is created programmatically and synchronized with the DOM
         b. Template Driven
             - in app.module.ts import FormsModule and add to imports
@@ -351,7 +351,7 @@ Angular Fundamentals
             - onSubmit
                 - Form passed to method
                     - <form (ngSubmit)="onSubmit(f)" #f="ngForm"></form>, fired whenever submit button is pressed
-                    - onSubmit(form: gForm) { console.log(form)}
+                    - onSubmit(form: ngForm) { console.log(form)}
                 - @ViewChild
                     - <form (ngSubmit)="onSubmit()" #f="ngForm"></form>, fired whenever submit button is pressed
                     - @ViewChild('f') formName: NgForm
@@ -426,7 +426,7 @@ Angular Fundamentals
                         'gender': new FormControl('male')
                     });
                 }
-                - <div formGroupName="userData"><input formControlName="name" /></div>
+                - <div formGroupName="userData"><input formControlName="username" /></div>
             - Arrays of Form Controls
                 - import { FormGroup, FormControl, Validators, FormArray } from "@angular/forms"
                 - ngOnInit() {
@@ -461,7 +461,7 @@ Angular Fundamentals
         b. Using a Pipe
             - {{ value | pipeName}}
             - {{ value | pipeName:'parameter'}}
-            - {{ value | pipeName } anotherPipeName}
+            - {{ value | pipeName | anotherPipeName}}
         c. Types of pipes
             - async, value should be promise/observable
             - data
@@ -533,7 +533,7 @@ Angular Fundamentals
              - app.module.ts
                 - import { HttpClientModule} from "@angular/commom/http";
                 @NgModule({imports: [HttpClientModule], providers: [Service]}), after Browser!
-            - somethig.component.ts
+            - something.component.ts
                 - import {Service} from "service.ts";
                 - constructor(private service: Service){}
                 - method() {
