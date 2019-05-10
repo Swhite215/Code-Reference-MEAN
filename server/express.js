@@ -1,14 +1,16 @@
 const express = require("express");
-const app = express();
 const path = require("path");
+const bodyParser = require("body-parser");
 
 const apiRoutes = require("./routes/routes");
-
-const bodyParser = require("body-parser");
+const app = express();
 
 //Middlware - Body Parser
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
+
+//Middleware - Serving Static Files - Forwarded to File System
+app.use(express.static(path.join(__dirname, "public")));
 
 //Middleware - Applies to all requests
 app.use((req, res, next) => {
@@ -38,3 +40,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server listening on port: ${PORT}`);
 });
+
+//TODO: DELETE NODE_MODULES ON DESKTOP
