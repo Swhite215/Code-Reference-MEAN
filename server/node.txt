@@ -44,5 +44,12 @@ Node Fundamentals
     3. Express
         a. What is Express?
             - A framework for building servers
+        b. Middlware
+            - A function that is run in between every request
+            - Use next() to allow the request to continue to the next middlware
+        c. Routes
+            - app.use(cb) to pass middleware to all requests
+            - app.use('/path', cb) to add middleware to specific paths
+            - app.get, app.post, app.put, app.delete to add route handlers for HTTP methods
             
             
