@@ -1,7 +1,7 @@
 const express = require("express");
 
 const app = express();
-const apiRoutes = require("./routes");
+const apiRoutes = require("./routes/routes");
 
 //Middleware - Applies to all requests
 app.use((req, res, next) => {
