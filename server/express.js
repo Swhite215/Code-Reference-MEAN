@@ -1,7 +1,13 @@
 const express = require("express");
-
 const app = express();
+
 const apiRoutes = require("./routes/routes");
+
+const bodyParser = require("body-parser");
+
+//Middlware - Body Parser
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
 //Middleware - Applies to all requests
 app.use((req, res, next) => {
@@ -18,12 +24,12 @@ app.use('/example', (req, res, next) => {
     res.send(`<h1>Welcome to Example Page</h1>`);
 });
 
-//Routing - Example File
+//Routing - Example Routes File
 app.use('/api', apiRoutes);
 
-//Routing - Root Path
-app.use('/', (req, res, next) => {
-    res.send(`<h1>Hello</h1>`);
+//Routing - Catch All Error Path
+app.post('/', (req, res, next) => {
+    res.status(404).send(`<h1>404 Error Page Not Found</h1>`);
 });
 
 const PORT = process.env.PORT || 3000;
@@ -31,3 +37,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server listening on port: ${PORT}`);
 });
+
+//TODO: DELETE NODE_MODULES ON DESKTOP
