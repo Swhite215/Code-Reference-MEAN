@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 
 const apiRoutes = require("./routes/routes");
 
@@ -29,7 +30,7 @@ app.use('/api', apiRoutes);
 
 //Routing - Catch All Error Path
 app.post('/', (req, res, next) => {
-    res.status(404).send(`<h1>404 Error Page Not Found</h1>`);
+    res.sendFile(path.join(__dirname, "views", "404.html"));
 });
 
 const PORT = process.env.PORT || 3000;
