@@ -102,9 +102,28 @@ Docker Fundamentals
                 - EXPOSE: by default no tcp or udp ports are open in a container, we expose ports here
                 - WORKDIR: change working directory and continue running commands
                 - CMD: required parameter, final command that will be run everytime a container is launched or restarted
+                - VOLUME: create volume location and assign it to directory
         b. Building
             - docker image build -t customName ., within directory with dockerfile
             - Keep that which changes least at top of dockerfile, and most at the bottom
+    6. Volumes: Container Lifetime & Persistent Data
+        a. Nature
+            - Immutable and ephemeral
+            - Immutable infrastructure, never change just re-deploy
+            - What about databases or unique data? (Separation of Concerns)
+                - This is persistent data that we need to deal with
+        b. Volumes
+            - Make special location outside of container's union file system to store unique data
+            - Persists until manually deleted
+            - Options
+                - Option #1: Volume command in dockerfile
+                - Option #2: CLI named volume -v name:/path
+                - Option #3: CLI docker volume create, usually not used...
+        c. Bind Mounts
+            - Sharing or mounting a host directory inside the container
+            - Mapping of the host files, or directories into a container file or directory
+            - Basically just two locations pointing to the same file(s)
+            - Can't use in a dockerfile, must be in docker run
     X. Docker Commands
         a. docker version, returns version of client and server
         b. docker info, returns configuration details
@@ -149,6 +168,10 @@ Docker Fundamentals
         ii. docker login, logs into docker hub
         jj. docker logout, logs out from docker hub
         kk. docker image build -t customName ., builds docker image from file inside this directory
+        ll. docker volume prune, removed unused volumes
+        mm. docker container run -d --name name -v name:/path image, this creates a named volume with a path to the persisted data
+        nn. docker volume create, creates a volume ahead of time
+        00. docker container run -d --name name -v /host/path/to/bind:/path/in/container, this creates container folder pointing to the host folder with access to contained files
     X. Resources
         a. landscape.cncf.io
         b. hub.docker.com
