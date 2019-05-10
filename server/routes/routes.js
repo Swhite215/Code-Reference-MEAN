@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
+const path = require("path");
 
 //Example Route - GET
 router.get("/sample", (req, res, next) => {
-    res.send(`<h1>Hello from sample api route</h1>`);
+    res.sendFile(path.join(__dirname, "../", "views", "example.html"));
 });
 
 //Example Route - POST
