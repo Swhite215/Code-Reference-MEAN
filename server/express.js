@@ -30,7 +30,7 @@ app.use('/api', apiRoutes);
 
 //Routing - Catch All Error Path
 app.post('/', (req, res, next) => {
-    res.sendFile(path.join(__dirname, "views", "404.html"));
+    res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
 });
 
 const PORT = process.env.PORT || 3000;
@@ -38,5 +38,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server listening on port: ${PORT}`);
 });
-
-//TODO: DELETE NODE_MODULES ON DESKTOP
