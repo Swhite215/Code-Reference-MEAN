@@ -1,11 +1,23 @@
-version: '2'
-
-# same as docker run -v $(pwd):/site -p 80:4000 bretfisher/jekyll-server
+version: "2"
 
 services:
-  jekyll:
-    image: bretfisher/jekyll-serve
-    volume:
-      - .:/site
-    ports:
-      - '80:4000'
+    drupal:
+        image: drupal:8.6
+        ports:
+            - "8080:80"
+        volumes:
+            - drupal-modules:/var/www/html/modules \
+            - drupal-profiles:/var/www/html/profiles \
+            - drupal-sites:/var/www/html/sites \
+            - drupal-themes:/var/www/html/themes
+
+    postgres:
+        image: postgres:11
+        environment:
+            - POSTGRES_PASSWORD=Test
+
+volumes:
+    drupal-modules:
+    drupal-profiles:
+    drupal-sites:
+    drupal-themes:
