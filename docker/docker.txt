@@ -124,6 +124,24 @@ Docker Fundamentals
             - Mapping of the host files, or directories into a container file or directory
             - Basically just two locations pointing to the same file(s)
             - Can't use in a dockerfile, must be in docker run
+    7. Docker Compose
+        a. docker-compose.yml
+            - File filled with multiple containers
+            - Structure
+                - version: '3.1'
+                - services: # containers, same as docker run
+                    servicename: # a friendly name, this is also DNS name inside network
+                        image: # Optional if you use build:
+                        command: # Optional, replace the default CMD specified by the image
+                        environment: # Optional, same as -e in docker run
+                        volumes: # Optional, same as -v in docker run
+                - volumes: # Optional, same as docker volume create
+                - networks: # Optional, same as docker network create
+        b. docker-compose cli
+            - docker-compose up, setup volumes/networks and start all containers
+            - docker-compose down, stop all containers and remove cont/vol/net
+        c. Using Compose to Build
+            - Compose can also build your custom images
     X. Docker Commands
         a. docker version, returns version of client and server
         b. docker info, returns configuration details
@@ -171,7 +189,10 @@ Docker Fundamentals
         ll. docker volume prune, removed unused volumes
         mm. docker container run -d --name name -v name:/path image, this creates a named volume with a path to the persisted data
         nn. docker volume create, creates a volume ahead of time
-        00. docker container run -d --name name -v /host/path/to/bind:/path/in/container, this creates container folder pointing to the host folder with access to contained files
+        oo. docker container run -d --name name -v /host/path/to/bind:/path/in/container, this creates container folder pointing to the host folder with access to contained files
+        pp. docker-compose up, setup volumes/networks and start all containers
+        qq. docker-compose down, stop all containers and remove cont/vol/net
+        rr. docker image inspect image
     X. Resources
         a. landscape.cncf.io
         b. hub.docker.com
