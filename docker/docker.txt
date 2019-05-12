@@ -142,6 +142,80 @@ Docker Fundamentals
             - docker-compose down, stop all containers and remove cont/vol/net
         c. Using Compose to Build
             - Compose can also build your custom images
+    8. Docker Swarm
+        a. What is it?
+            - Built-In Orchestration: Swarm Mode 2016
+            - Clustering solution built inside Docker
+            - Not enabled by default
+            - Answers
+                - How do we automate container lifecycle?
+                - How can we easily scale out/in/up/down?
+                - How can we ensure our containers are recreated if they fail?
+                - How can we replace containers without downtime? (blue/green deploy)
+                - How can we control/track where containers get started?
+                - How can we cerate cross-node virtual networks?
+                - How can we ensure only trusted servers run our containers?
+                - How can we store secrets, keys, passwords, and get them to the right container?
+        b. How do you use it?
+            - Run containers with extra information
+                - 1 Service, Multiple Replicas/Tasks - Containers
+            - Commands are below
+        c. Overlay Multi-Host Networking
+            - Creating a swarm wide bridge network where containers can access each other
+            - docker network create --drive overlay networkName
+            - docker service create --name serviceName --network networkName image (x2)
+        d. Scaling Out with Routing Mesh
+            - Ingress network that distributes packets for a service to proper task/container
+            - Virtual IP load balances across nodes IPs
+        e. Stacks: Prduction Grade Compose
+            - Stacks accept compose files as their declarative definition for services, networks, and volumes
+            - Multiple Services -> Repliaces/Tasks/Containers -> Volumes -> Networks
+            - Require v3.x
+        f. Swarm Secrets
+            - Easiest "secure" solution for storing secrets in Swarm
+            - What is a secret?
+                - usernames and passwords
+                - TLS certificates and keys
+                - SSH Keys
+                - Any data you want hidden
+            - How does it work?
+                - Swarm Raft DB is encrypted on disk on Manager nodes
+                - Secrets are stored in Swarm and then assigned to Services(s)
+                - In-memory file system
+                - Create a service and then give the secret to the service, secrets show up as files in the container
+            - Secrets with Stacks
+                - v3.1 and up is required
+                - in docker-compose, add secrets under services and secrets file path
+        g. Full- App Life Cycle
+            - docker-compose up for development
+            - docker-compose up for cli environment
+            - docker stack deploy for production environment
+        h. Service Updates
+            - Provides rolling replacement of tasks/containers in a service
+            - Limits downtime
+            - Will replace containers for most changes
+            - Many cli options to control the update
+            - Create options will usually change, adding -d or -rm to them
+            - Incldues rollback and healthcheck options
+            - Allso has scale and rollback subcommand for quicker access
+            - A stack deploy to the same stack is an update
+            - Examples
+                - docker service update --image myapp:1.2.1 serviceName
+                    - update the image used to a newer verison
+                - docker service update --env-add NODE_ENV=production --publish-rm 8080
+                    - Adding an environment variable and remove a port
+                - docker service scale web=8 api=6
+                    - Change number of replicas of two services
+                - docker stack deploy -c file.yml stackName
+        i. Health Checks
+            - Available everywhere
+            - options
+                --interval=, --timeout=, --start-period=, --retries=
+            - DOckerfile
+                - HEALTHCHECK curl -f http://localhost/ || false
+            - States: starting, healthy, or unhealty
+            - docker container ls will show the health if health check is running
+            - docker container inspect will show last 5 health checks
     X. Docker Commands
         a. docker version, returns version of client and server
         b. docker info, returns configuration details
@@ -193,6 +267,25 @@ Docker Fundamentals
         pp. docker-compose up, setup volumes/networks and start all containers
         qq. docker-compose down, stop all containers and remove cont/vol/net
         rr. docker image inspect image
+        ss. docker swarm
+            - docker swarm init
+                - creates root certificate
+                - certificate issued for manager node
+                - join tokens are created
+            - docker swarm join, joins a node to swarm                                                                                                                                                                                         - raft consensus database is created
+        tt. docker node ls, lists nodes in the swarm
+        uu. docker service
+            - docker service create image, creates services
+            - docker service ls, lists services
+            - docker service ps serviceName, shows tasks/containers in service
+            - docker service update serviceName --replicas number
+            - docker service update --secret-rm, removes secrets and redeploys container
+        vv. docker stack
+            - docker stack deploy -c composeFile stackName
+        ww. docker secret
+            - docker secret create name file, create a secret
+            - docker secret ls, lists secrets
+        xx. docker health
     X. Resources
         a. landscape.cncf.io
         b. hub.docker.com
