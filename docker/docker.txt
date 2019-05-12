@@ -216,6 +216,28 @@ Docker Fundamentals
             - States: starting, healthy, or unhealty
             - docker container ls will show the health if health check is running
             - docker container inspect will show last 5 health checks
+    9. Docker Registry
+        a. Docker Hub
+            - Default registry
+            - Repositories public and private
+        b. Docker Store
+            - Downloading Docker Editions
+            - App Store for Images
+        c. Docker Cloud
+            - Web based orchestration system for docker swarm
+            - Build area for automated image building, testing, and deployment
+            - CI/CD platform
+        e. Docker Registry
+            - Private image repository for your network
+            - Part of tee docker/distribution Github repo
+            - Web API and storage system
+            - Secure by default, requires HTTPS except localhost 127.0.0.0/8
+            - Private Registry
+                - docker container run -d -p 5000:5000 --name registry registry
+                - docker tag image 127.0.0.1:5000/name
+                - docker push 127.0.0.1:5000/name
+                - docker container kill registry
+                - docker container rm registry
     X. Docker Commands
         a. docker version, returns version of client and server
         b. docker info, returns configuration details
