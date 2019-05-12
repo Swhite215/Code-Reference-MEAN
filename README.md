@@ -178,6 +178,6 @@ To provide reference materials for a variety of topics encountered when using th
 
 ###### &nbsp;&nbsp;&nbsp;&nbsp; [Dockerfile](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/docker/Dockerfile)
 
-###### &nbsp;&nbsp;&nbsp;&nbsp; [Docker Compose]()
+###### &nbsp;&nbsp;&nbsp;&nbsp; [Docker Compose](https://github.com/Swhite215/Code-Reference-MEAN/blob/master/docker/docker-compose.yml)
 
 
