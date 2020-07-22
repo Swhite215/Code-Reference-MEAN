@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, OnDestroy, ContentChild, ElementRef } from '@angular/core';
+import { Content } from '@angular/compiler/src/render3/r3_ast';
 
 @Component({
   selector: 'app-server-element',
@@ -8,6 +9,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges, DoCheck, AfterConte
 export class ServerElementComponent implements OnInit {
 
   @Input() element: {type: string, name: string, content: string};
+  @ContentChild('contentParagraph', {static: true}) paragraph: ElementRef;
 
   constructor() {
     console.log("Constructor called!")
@@ -32,6 +34,7 @@ export class ServerElementComponent implements OnInit {
   // ngAfterContentInit - Called after content (ng-content) has been projected into view
   ngAfterContentInit() {
     console.log("ngAfterContentInit called!")
+    console.log("Text Content of Paragraph: " + this.paragraph.nativeElement.textContent)
   }
 
   // ngAfterContentChecked - Called every time the projected content has been checked
