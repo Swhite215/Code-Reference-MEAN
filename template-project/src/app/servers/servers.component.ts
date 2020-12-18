@@ -13,6 +13,7 @@ export class ServersComponent implements OnInit {
   username: string = "";
   serverCreated = false;
   servers: string[] = ["TestServer", "TestServer 2"]
+  coatingSupplier: string = "";
 
   constructor() { 
     setTimeout(() => {
@@ -32,6 +33,7 @@ export class ServersComponent implements OnInit {
   onUpdateServerName(event: Event) {
     console.log((<HTMLInputElement>event.target).id);
     this.serverName = (<HTMLInputElement>event.target).value;
+
   }
 
   onResetUsername() {

@@ -1,6 +1,6 @@
 <input class="form-control" type="text" id="Substrate Supplier" (input)="onUpdateServerName($event)" >
 <input class="form-control" type="text" id="Coating Supplier" (input)="onUpdateServerName($event)" >
-<input type="text" class="form-control" id="text" [(ngModel)]="username" >
+<input type="text" class="form-control" id="text" [(ngModel)]="coatingSupplier" >
 <p>This is the username: {{ username }}</p>
 <button class="btn btn-primary" [disabled]="!(username != '')" (click)="onResetUsername()" >Username Button</button>
 <p>{{ serverName }}</p>
